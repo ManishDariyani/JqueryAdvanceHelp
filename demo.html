@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Advance Help Demo</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.advance.help.js"></script>
+<link type="text/css" rel="stylesheet" href="jquery.advance.help.css"></link>
+<script type="text/javascript">
+function showHelp()
+{
+	$('#DemoDiv').advanceHelp({
+		'helpText':'This is highlight text!<br />Made By: <br />Manish Dariyani'
+	});
+}
+</script>
+<style type="text/css">
+#DemoDiv
+{
+	margin: 20px 0px 0px 20px;
+	width: 200px;
+	height: 100px;
+	text-align: center;
+	padding: 10px;
+	border:#000 2px solid;
+	background-color: #FFF;
+}
+</style>
+</head>
+<body>
+<div id="DemoDiv">
+	This will get highlighted.
+	<br />
+	<br />
+	<button onclick="showHelp();">Help!</button>
+</div>
+</body>
+</html>
