@@ -11,7 +11,7 @@
 		var me = this,
 		elementCurrent = $(this),
 		default_options = {
-			helpText: 'This is highlight Text',
+			helpText: 'This is help text!',
 			buttonText: 'Close',
 			model: true,
 			helpBgColor: '#075698',
