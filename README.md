@@ -63,7 +63,7 @@ $('#DemoDiv').advanceHelp({
       <td>Help box position relative to the element</td>
       <td>String</td>
       <td><code>auto</code></td>
-      <td><code>auto</code>,<code>top</code>,<code>right</code>,<code>bottom</code>,<code>left</code></td>
+      <td><code>auto</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></td>
     </tr>
     <tr>
       <td>elementBgColor</td>
