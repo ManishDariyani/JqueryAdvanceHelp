@@ -1,0 +1,58 @@
+/**
+ * jQuery.advanceHelp 
+ * Date: Nov 13, 2013
+ * @author Manish Dariyani
+ * @version 1.0
+ *
+*/
+#advanceHelpOverlay {
+    background:rgba(0,0,0,0.5);
+    display:none;
+    width:100%;
+	height:100%;
+    position:absolute;
+	top:0;
+	left:0;
+	z-index:99998;
+}
+#advanceHelpText {
+    position:absolute;
+	padding: 5px 15px;
+}
+.topBox{
+	border-width:20px 0 0 20px;
+	bottom:-20px;
+	left:10px;
+	border-right-color:transparent !important;
+	border-left-color:transparent !important;
+}
+.rightBox{
+	border-width:20px 20px 0 0;
+	bottom:5px;
+	left:-20px;
+	border-top-color:transparent !important;
+	border-bottom-color:transparent !important;
+}
+.bottomBox{
+	border-width:20px 20px 0 0;
+	top:-20px;
+	right:10px;
+	border-top-color:transparent !important;
+	border-bottom-color:transparent !important;	
+}
+.leftBox{
+	border-width:20px 0 0 20px;
+	bottom:5px;
+	right:-20px;
+	border-top-color:transparent !important;
+	border-bottom-color:transparent !important;	
+}
+.topBox, .rightBox, .bottomBox, .leftBox{
+	border-style: solid; 
+	position:absolute;
+}
+.helpSection
+{
+	z-index: 99999;
+	position: relative;
+}
