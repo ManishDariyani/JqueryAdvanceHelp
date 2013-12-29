@@ -11,7 +11,7 @@ $('#DemoDiv').advanceHelp({
 });
 </code>
 
-<h3>Library options.</h3>
+<h3>Options.</h3>
 <table>
   <thead>
     <tr>
@@ -72,10 +72,24 @@ $('#DemoDiv').advanceHelp({
       <td><code>#FFF</code></td>
       <td>Any valid RGB color code or name</td>
     </tr>
+    <tr>
+      <td>closeButton</td>
+      <td>Close link on top-right corner</td>
+      <td>Boolean</td>
+      <td><code>true</code></td>
+      <td><code>true</code> or <code>false</code></td>
+    </tr>
+    <tr>
+      <td>closeButtonText</td>
+      <td>Text of close link</td>
+      <td>String</td>
+      <td>Close</td>
+      <td>String or Valid HTML</td>
+    </tr>
   </tbody>
 </table>
 
-<h3>Library Events.</h3>
+<h3>Events.</h3>
 <ol>
 	<li><code>onShow</code></li>
 	<li><code>onHide</code></li>
