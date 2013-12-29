@@ -11,10 +11,11 @@
 		var me = this,
 		elementCurrent = $(this),
 		default_options = {
-			helpText: 'This is help text!',
-			buttonText: 'Close',
+			helpText: 'This is highlight Text',
+			closeButton: true,
+			closeButtonText: 'Close',
 			model: true,
-			helpBgColor: '#075698',
+			helpBgColor: '#069',
 			helpBoxPosition: 'auto',
 			helpTextColor: '#FFF',
 			helpTextSize: 'small',
@@ -48,25 +49,30 @@
 		}
 		options = $.extend(default_options, options);
 		
-		if($('#advanceHelpOverlay').length > 0) {
+		if($('#advanceHelpOverlay').length > 0 || $('#advanceHelpText').length > 0) {
 			destroy();
 			if(options.onOverride)
 				options.onOverride.call();
 		}
-			
-		var bubbleBox = '<div id="advanceHelpText" style="display:none;background-color:'+options.helpBgColor+';color:'+options.helpTextColor+';font-size:'+options.helpTextSize+';top:'+boxTop+'px;left:'+boxLeft+'px;">'+options.helpText+'<div id="advanceHelpDummyDiv" style="display:none;border-color:'+options.helpBgColor+';"></div></div>';
+		
+		var bubbleBox = '<div id="advanceHelpText" style="display:none;background-color:'+options.helpBgColor+';color:'+options.helpTextColor+';font-size:'+options.helpTextSize+';">'+options.helpText+'<div id="advanceHelpDummyDiv" style="display:none;border-color:'+options.helpBgColor+';"></div></div>';
 		$('body').append(bubbleBox);
 		var box = $('#advanceHelpText');
 		var position = (options.helpBoxPosition && options.helpBoxPosition != 'auto')?options.helpBoxPosition:findReleventPosition(elementCurrent,box);
 		var boxLeft = (position == 'top' || position == 'bottom')?elementCurrent.offset().left:(position == 'right')?elementCurrent.offset().left + elementCurrent.width() + 50:elementCurrent.offset().left - box.width() - 60;
 		var boxTop = (position == 'left' || position == 'right')?elementCurrent.offset().top:(position == 'bottom')?elementCurrent.offset().top + elementCurrent.height() + 50:elementCurrent.offset().top - box.height() - 40;
 		
-		box.css({'top':boxTop+'px','left':boxLeft+'px'}).show().children().addClass(position+'Box').show();
+		box.css({'top':boxTop+'px','left':boxLeft+'px'}).show().children().not('#advanceHelpClose').addClass(position+'Box').show();
 		
 		
 		if(options.model){
 			var modelOverlay = '<div id="advanceHelpOverlay"></div>';
-			$('#advanceHelpText').wrap(modelOverlay);
+			box.wrap(modelOverlay);
+		}
+		
+		if(options.closeButton){
+			box.append('<a href="javascript:void(0)" id="advanceHelpClose" style="color:'+options.helpTextColor+';">'+options.closeButtonText+'</a>');
+			box.css({'padding-top':'20px'});
 		}
 		
 		elementCurrent.addClass('helpSection').css({'background-color':options.elementBgColor});
