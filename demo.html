@@ -6,17 +6,26 @@
 <script type="text/javascript" src="jquery.advance.help.js"></script>
 <link type="text/css" rel="stylesheet" href="jquery.advance.help.css"></link>
 <script type="text/javascript">
-function showHelp()
+function highLight()
 {
 	$('#DemoDiv').advanceHelp({
-		'helpText':'This is help text!'
+		'helpText':'This is help text!',
+		'model':true,
+		'closeButton':false,
+		'helpBoxPosition':'left',
+		'onShow':function(){
+			console.log('Show event of advance help');
+		},
+		'onHide':function(){
+			console.log('Hide event of advance help');
+		}
 	});
 }
 </script>
 <style type="text/css">
 #DemoDiv
 {
-	margin: 20px 0px 0px 20px;
+	margin: 20px 0px 0px 200px;
 	width: 200px;
 	height: 100px;
 	text-align: center;
@@ -28,10 +37,10 @@ function showHelp()
 </head>
 <body>
 <div id="DemoDiv">
-	This will get highlighted.
+	This will be highlighted.
 	<br />
 	<br />
-	<button onclick="showHelp();">Help!</button>
+	<button onclick="highLight();">Highlight!</button>
 </div>
 </body>
 </html>
