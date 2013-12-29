@@ -32,6 +32,7 @@
 			return(position);
 		},
 		closeBox = function(){
+			e.stopPropagation();
 			if($('#advanceHelpOverlay').length > 0) {
 				$('#advanceHelpOverlay').fadeOut(300,function(){
 					destroy();
